@@ -303,7 +303,8 @@
 - name: purge ceph osd cluster
 
   hosts:
-    - "{{ osd_group_name|default('osds') }}"
+    - "{{ osd_group_name | default('osds') }}"
+    - "{{ mon_group_name | default('mons') }}"
 
   gather_facts: true
   become: true
